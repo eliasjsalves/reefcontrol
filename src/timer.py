@@ -6,15 +6,15 @@ from lamp import Lamp
 # TURN_ON_FULL     = { 'hour': 15, 'minute': 00 }
 # TURN_ON_FADE_OUT = { 'hour': 22, 'minute': 00 }
 # TURN_OFF         = { 'hour': 23, 'minute': 59 }
-TURN_ON_FADE_IN  = { 'hour': 12, 'minute': 0 }
-TURN_ON_FULL     = { 'hour': 14, 'minute': 0 }
+TURN_ON_FADE_IN  = { 'hour': 14, 'minute': 0 }
+TURN_ON_FULL     = { 'hour': 15, 'minute': 30 }
 TURN_ON_FADE_OUT = { 'hour': 22, 'minute': 0 }
-TURN_OFF         = { 'hour': 23, 'minute': 59 }
+TURN_OFF         = { 'hour': 23, 'minute': 30 }
 
 lamp = Lamp()
 
 def start_job():
-    hour = 21
+    hour = 13
     minute = 50
     while True:
         now = datetime.now()
@@ -49,7 +49,7 @@ def start_job():
             lamp.turn_white_to(0)
             lamp.turn_red_to(0)
 
-        time.sleep(0.5)
+        time.sleep(0.1)
 
         minute += 1
         if minute == 60:
